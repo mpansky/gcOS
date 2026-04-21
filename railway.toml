@@ -1,0 +1,23 @@
+# Railway deployment config for gcOS.
+# Docs: https://docs.railway.com/reference/config-as-code
+
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+# Dockerfile CMD already starts the server; no override needed.
+healthcheckPath = "/api/health"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 5
+
+# Important environment variables to set in the Railway service UI:
+#   DATABASE_URL               -> auto-wired when you add a Postgres plugin
+#   PORT                       -> auto-injected by Railway; server reads it
+#   PAPERCLIP_HOME             = /paperclip
+#   PAPERCLIP_DEPLOYMENT_MODE  = authenticated
+#   PAPERCLIP_DEPLOYMENT_EXPOSURE = public
+#   PAPERCLIP_API_URL          = https://<your-railway-domain>
+#
+# Attach a persistent volume at /paperclip so instance data survives redeploys.

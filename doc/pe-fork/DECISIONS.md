@@ -12,6 +12,14 @@ Format:
 
 ---
 
+## 2026-04-21 — Deploy to Railway; pull deployment forward from Phase 6
+**Decision:** Host gcOS on Railway. Skip the local-dev path entirely and use Railway as the Managing Partner's working environment starting Phase 0.
+**Why:** Managing Partner doesn't want to manage a local Node/pnpm/Postgres stack. Paperclip already has a production-ready Dockerfile; Railway auto-detects it, provides managed Postgres + persistent volumes + public HTTPS in a few clicks. This gives us a real working URL immediately instead of after Phase 6.
+**Alternatives considered:**
+- Netlify: rejected — can't host long-running Node processes, no Postgres, no heartbeats.
+- GitHub Codespaces: viable, but ephemeral (pauses when closed). Railway is always-on, needed for heartbeats.
+- Render / Fly.io: equivalent to Railway, picked Railway for lowest setup friction.
+
 ## 2026-04-21 — Phase order: entity model before diligence skills
 **Decision:** Build the PE Company entity model (Phase 1) before the diligence skills (Phase 4).
 **Why:** Diligence output needs to attach to a Company at a specific stage, with data-room references. Shipping diligence first would require throwaway scaffolding that we'd replace in Phase 1.
@@ -22,10 +30,7 @@ Format:
 **Why:** Past attempts lost work. Every phase is independently useful, so frequent pushes = durable progress.
 **Alternatives considered:** One push at the end. Rejected — too risky.
 
-## 2026-04-21 — Deployment host deferred to Phase 6
-**Decision:** Run locally for Phases 0–5, pick the host at Phase 6.
-**Why:** Paperclip is a stateful Node.js + Postgres app with long-running heartbeats. Netlify alone can't host it. We'll evaluate Railway / Render / Fly.io / Vercel at Phase 6 with a working system in hand.
-**Alternatives considered:** Lock in a target now. Rejected — we'd optimize for constraints we haven't felt yet.
+<!-- Superseded 2026-04-21: see "Deploy to Railway; pull deployment forward from Phase 6" above. -->
 
 ## 2026-04-21 — All agents on OpenClaw
 **Decision:** The PE firm's agent roster uses OpenClaw as the sole runtime for now.

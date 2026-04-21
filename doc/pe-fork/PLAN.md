@@ -21,13 +21,15 @@
 
 | # | Phase | Status | Doc |
 |---|-------|--------|-----|
-| 0 | Fork hygiene & baseline | 🟡 in progress | [phase-0-baseline.md](phase-0-baseline.md) |
+| 0 | Fork hygiene & Railway baseline | 🟡 in progress | [phase-0-baseline.md](phase-0-baseline.md) · [deployment.md](deployment.md) |
 | 1 | PE Company entity model | ⚪ not started | [phase-1-entity-model.md](phase-1-entity-model.md) |
 | 2 | PE org chart template (OpenClaw) | ⚪ not started | [phase-2-org-chart.md](phase-2-org-chart.md) |
 | 3 | Managing Partner approval controls | ⚪ not started | [phase-3-approvals.md](phase-3-approvals.md) |
 | 4 | Diligence skills (data room + board deck) | ⚪ not started | [phase-4-diligence.md](phase-4-diligence.md) |
 | 5 | Per-company memory / knowledge | ⚪ not started | [phase-5-memory.md](phase-5-memory.md) |
-| 6 | Deployment (GitHub + chosen host) | ⚪ not started | [phase-6-deploy.md](phase-6-deploy.md) |
+| 6 | Deployment hardening (CI, domain, backups) | ⚪ not started | [phase-6-deploy.md](phase-6-deploy.md) |
+
+> **Deploy target:** Railway. The initial deploy is folded into Phase 0 so the Managing Partner has a live URL from day one. Phase 6 now focuses on hardening (GitHub Actions CI, custom domain, backup strategy) rather than picking a host.
 
 Legend: ⚪ not started · 🟡 in progress · 🟢 done · 🔴 blocked
 
