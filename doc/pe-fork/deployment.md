@@ -57,7 +57,7 @@ Don't set `PAPERCLIP_SECRETS_MASTER_KEY` manually for the first boot; the server
 ### 5. Generate the public domain
 1. gcOS service → **Settings → Networking → Generate Domain**.
 2. Railway hands you a URL like `gcos-production.up.railway.app`.
-3. Copy that URL back into `PAPERCLIP_API_URL` (with `https://` prefix) in Variables. Redeploy.
+3. Copy that URL back into `PAPERCLIP_PUBLIC_URL` (with `https://` prefix) in Variables. Redeploy.
 
 ### 6. Deploy
 Railway redeploys automatically when:
