@@ -47,7 +47,8 @@ On the gcOS service → **Variables**, add:
 | `PAPERCLIP_DEPLOYMENT_MODE` | `authenticated` | run with auth (the Dockerfile already defaults to this) |
 | `PAPERCLIP_DEPLOYMENT_EXPOSURE` | `public` | Railway's domain is public; override the Dockerfile's `private` default |
 | `HOST` | `0.0.0.0` | listen on all interfaces (Dockerfile already sets this, belt-and-suspenders) |
-| `PAPERCLIP_API_URL` | `https://<your-railway-domain>` | fill in after step 5 below, then redeploy |
+| `PAPERCLIP_PUBLIC_URL` | `https://<your-railway-domain>` | set after step 5 below, then redeploy; auto-adds the hostname to the allowlist |
+| `PAPERCLIP_ALLOWED_HOSTNAMES` | `<your-railway-domain>` (no scheme) | redundant with `PAPERCLIP_PUBLIC_URL` but harmless — set this if requests are still getting `Host not in allowlist` 403s |
 
 Do **not** set `PORT` — Railway injects it and the server reads it from env.
 
